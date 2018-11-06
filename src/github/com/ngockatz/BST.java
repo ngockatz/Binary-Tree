@@ -81,13 +81,13 @@ public class BST<K extends Comparable<? super K> ,E> {
         }
         return rt;
     }
+    /* Helper: find node with minimum key */
     private BSTNode<K,E> __findmin(BSTNode<K,E> rt){
-        //if (rt==null) return null;
         if (rt.getLeft()==null) return rt;
         return __findmin(rt.getLeft());
     }
+    /* Helper: delete node with minimum key from tree */
     private BSTNode<K,E> __deletemin(BSTNode<K,E> rt){
-        //if (rt==null) return null;
         if (rt.getLeft()==null) return rt.getRight();
         rt.setLeft(__deletemin(rt.getLeft()));
         return rt;
